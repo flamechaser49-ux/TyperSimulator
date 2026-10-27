@@ -27,24 +27,6 @@
 | **自检与测试** | `--selftest` 编码/引擎自测、`--e2e` 六场景真实窗口端到端、tests/ 全套自动测试 |
 | **支持文件读取** | .txt/.c/.h/.cpp/.cc/.cxx/.hpp/.py/.docx，编码自动识别 UTF-8/UTF-16/GBK |
 
-## 目录结构
-
-```
-typing_simulator/
-├── app/                          # 应用本体：源码 + 成品
-│   ├── TyperSimulator.py         # 源码（单文件，纯标准库，无第三方依赖）
-│   └── 打字模拟器.exe            # 编译好的独立可执行（分发只需这一个文件）
-├── tests/                        # 测试与开发工具
-│   ├── _target_app.py            # e2e 用的跨进程目标窗口小程序
-│   ├── _gui_flow_test.py         # GUI 全流程自动测试（场景 A–E）
-│   ├── _probe_web.py             # 「禁止粘贴网页」打字实验（本地 HTTP 验证字真进了网页）
-│   ├── _run_tool.py              # 构建辅助（受限环境里跑 pip/PyInstaller 用）
-│   └── dpi.manifest              # PerMonitorV2 DPI 感知清单（打包时嵌入 exe）
-├── README.md                     # 本文档：当前功能与使用
-├── CHANGELOG.md                  # 更新日志：相比最初版本（2026-10-25）的全部变化
-└── .gitignore
-```
-
 `build/`、`dist/`、`.pydeps/`、`*.exe` 均被 `.gitignore` 排除——git 里只放源码和文档，exe 发版传 GitHub Releases 即可。
 
 ## 运行
